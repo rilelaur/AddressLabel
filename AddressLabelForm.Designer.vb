@@ -22,6 +22,7 @@ Partial Class AddressLabelForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DisplayButton = New System.Windows.Forms.Button()
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.ExitButton = New System.Windows.Forms.Button()
@@ -40,6 +41,7 @@ Partial Class AddressLabelForm
         Me.FirstNameLabel = New System.Windows.Forms.Label()
         Me.OutputGroupBox = New System.Windows.Forms.GroupBox()
         Me.DisplayLabel = New System.Windows.Forms.Label()
+        Me.HoverToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.InputGroupBox.SuspendLayout()
         Me.OutputGroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -49,8 +51,9 @@ Partial Class AddressLabelForm
         Me.DisplayButton.Location = New System.Drawing.Point(356, 380)
         Me.DisplayButton.Name = "DisplayButton"
         Me.DisplayButton.Size = New System.Drawing.Size(140, 58)
-        Me.DisplayButton.TabIndex = 0
+        Me.DisplayButton.TabIndex = 1
         Me.DisplayButton.Text = "Display Label"
+        Me.HoverToolTip.SetToolTip(Me.DisplayButton, "Click to have your address label displayed")
         Me.DisplayButton.UseVisualStyleBackColor = True
         '
         'ClearButton
@@ -58,8 +61,9 @@ Partial Class AddressLabelForm
         Me.ClearButton.Location = New System.Drawing.Point(502, 380)
         Me.ClearButton.Name = "ClearButton"
         Me.ClearButton.Size = New System.Drawing.Size(140, 58)
-        Me.ClearButton.TabIndex = 1
+        Me.ClearButton.TabIndex = 2
         Me.ClearButton.Text = "Clear"
+        Me.HoverToolTip.SetToolTip(Me.ClearButton, "Click to clear everything")
         Me.ClearButton.UseVisualStyleBackColor = True
         '
         'ExitButton
@@ -67,8 +71,9 @@ Partial Class AddressLabelForm
         Me.ExitButton.Location = New System.Drawing.Point(648, 380)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(140, 58)
-        Me.ExitButton.TabIndex = 2
+        Me.ExitButton.TabIndex = 3
         Me.ExitButton.Text = "E&xit"
+        Me.HoverToolTip.SetToolTip(Me.ExitButton, "Press ""x"" or click to exit")
         Me.ExitButton.UseVisualStyleBackColor = True
         '
         'FirstNameTextBox
@@ -76,42 +81,48 @@ Partial Class AddressLabelForm
         Me.FirstNameTextBox.Location = New System.Drawing.Point(8, 57)
         Me.FirstNameTextBox.Name = "FirstNameTextBox"
         Me.FirstNameTextBox.Size = New System.Drawing.Size(283, 22)
-        Me.FirstNameTextBox.TabIndex = 3
+        Me.FirstNameTextBox.TabIndex = 0
+        Me.HoverToolTip.SetToolTip(Me.FirstNameTextBox, "Enter your first name")
         '
         'LastNameTextBox
         '
         Me.LastNameTextBox.Location = New System.Drawing.Point(8, 109)
         Me.LastNameTextBox.Name = "LastNameTextBox"
         Me.LastNameTextBox.Size = New System.Drawing.Size(283, 22)
-        Me.LastNameTextBox.TabIndex = 4
+        Me.LastNameTextBox.TabIndex = 1
+        Me.HoverToolTip.SetToolTip(Me.LastNameTextBox, "Enter your last name")
         '
         'CityTextBox
         '
         Me.CityTextBox.Location = New System.Drawing.Point(8, 218)
         Me.CityTextBox.Name = "CityTextBox"
         Me.CityTextBox.Size = New System.Drawing.Size(283, 22)
-        Me.CityTextBox.TabIndex = 6
+        Me.CityTextBox.TabIndex = 3
+        Me.HoverToolTip.SetToolTip(Me.CityTextBox, "Enter your city")
         '
         'StreetAddressTextBox
         '
         Me.StreetAddressTextBox.Location = New System.Drawing.Point(8, 166)
         Me.StreetAddressTextBox.Name = "StreetAddressTextBox"
         Me.StreetAddressTextBox.Size = New System.Drawing.Size(283, 22)
-        Me.StreetAddressTextBox.TabIndex = 5
+        Me.StreetAddressTextBox.TabIndex = 2
+        Me.HoverToolTip.SetToolTip(Me.StreetAddressTextBox, "Enter your street address")
         '
         'ZipTextBox
         '
         Me.ZipTextBox.Location = New System.Drawing.Point(6, 320)
         Me.ZipTextBox.Name = "ZipTextBox"
         Me.ZipTextBox.Size = New System.Drawing.Size(283, 22)
-        Me.ZipTextBox.TabIndex = 8
+        Me.ZipTextBox.TabIndex = 5
+        Me.HoverToolTip.SetToolTip(Me.ZipTextBox, "Enter your 6 digit zip code")
         '
         'StateTextBox
         '
         Me.StateTextBox.Location = New System.Drawing.Point(8, 270)
         Me.StateTextBox.Name = "StateTextBox"
         Me.StateTextBox.Size = New System.Drawing.Size(283, 22)
-        Me.StateTextBox.TabIndex = 7
+        Me.StateTextBox.TabIndex = 4
+        Me.HoverToolTip.SetToolTip(Me.StateTextBox, "Enter your state")
         '
         'InputGroupBox
         '
@@ -130,7 +141,7 @@ Partial Class AddressLabelForm
         Me.InputGroupBox.Location = New System.Drawing.Point(4, 6)
         Me.InputGroupBox.Name = "InputGroupBox"
         Me.InputGroupBox.Size = New System.Drawing.Size(316, 360)
-        Me.InputGroupBox.TabIndex = 9
+        Me.InputGroupBox.TabIndex = 0
         Me.InputGroupBox.TabStop = False
         Me.InputGroupBox.Text = "Mailing Address"
         '
@@ -194,7 +205,7 @@ Partial Class AddressLabelForm
         Me.OutputGroupBox.Location = New System.Drawing.Point(328, 15)
         Me.OutputGroupBox.Name = "OutputGroupBox"
         Me.OutputGroupBox.Size = New System.Drawing.Size(459, 350)
-        Me.OutputGroupBox.TabIndex = 10
+        Me.OutputGroupBox.TabIndex = 1
         Me.OutputGroupBox.TabStop = False
         Me.OutputGroupBox.Text = "Address Label"
         '
@@ -205,6 +216,14 @@ Partial Class AddressLabelForm
         Me.DisplayLabel.Name = "DisplayLabel"
         Me.DisplayLabel.Size = New System.Drawing.Size(0, 17)
         Me.DisplayLabel.TabIndex = 0
+        '
+        'HoverToolTip
+        '
+        Me.HoverToolTip.AutomaticDelay = 100
+        Me.HoverToolTip.AutoPopDelay = 1000
+        Me.HoverToolTip.InitialDelay = 100
+        Me.HoverToolTip.ReshowDelay = 0
+        Me.HoverToolTip.ShowAlways = True
         '
         'AddressLabelForm
         '
@@ -217,7 +236,7 @@ Partial Class AddressLabelForm
         Me.Controls.Add(Me.ClearButton)
         Me.Controls.Add(Me.DisplayButton)
         Me.Name = "AddressLabelForm"
-        Me.Text = "Form1"
+        Me.Text = "Address Label Viewer"
         Me.InputGroupBox.ResumeLayout(False)
         Me.InputGroupBox.PerformLayout()
         Me.OutputGroupBox.ResumeLayout(False)
@@ -244,4 +263,5 @@ Partial Class AddressLabelForm
     Friend WithEvents FirstNameLabel As Label
     Friend WithEvents OutputGroupBox As GroupBox
     Friend WithEvents DisplayLabel As Label
+    Friend WithEvents HoverToolTip As ToolTip
 End Class
